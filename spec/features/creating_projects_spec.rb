@@ -12,6 +12,13 @@ feature 'Creating Projects' do
     click_button 'Create Project'
 
     expect(page).to have_content('Project has been created.')
+
+    project = Project.where(name: 'MacVim').first
+
+    expect(page.current_url).to eql(project_url(project))
+
+    title = "MacVim - Projects - Ticketee"
+    expect(page).to have_title(title)
   end
 end
 
