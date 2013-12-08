@@ -60,3 +60,4 @@ class ProjectsController < ApplicationController
       redirect_to project_path
     end
 end
+
